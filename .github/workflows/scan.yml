@@ -8,5 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Update Package lists
+        run: sudo apt update -y
+      - name: Upgrade the version
+        run: sudo apt upgrade -y
+      - name: Install Nmap
+        run: sudo apt install nmap -y
+      - name: Confirm Nmap version
+        run: nmap --version
       - name: Scan network
         run: bash scan.sh >> $GITHUB_STEP_SUMMARY
