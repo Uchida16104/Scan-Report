@@ -17,8 +17,6 @@ jobs:
       - name: Confirm Nmap version
         run: nmap --version
       - name: Remove root privilege
-        run: pwd
-      - name: Switch root user
-        run: su
+        run: sudo chown -R /home/runner/work/Scan-Report/Scan-Report
       - name: Scan network
         run: bash scan.sh >> $GITHUB_STEP_SUMMARY
