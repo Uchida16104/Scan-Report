@@ -1,0 +1,12 @@
+name: network
+
+on:
+  push:
+
+jobs:
+  job-with-network-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Scan network
+        run: bash scan.sh >> $GITHUB_STEP_SUMMARY
