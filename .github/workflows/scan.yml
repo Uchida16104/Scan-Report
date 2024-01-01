@@ -16,7 +16,5 @@ jobs:
         run: sudo apt install nmap -y
       - name: Confirm Nmap version
         run: nmap --version
-      - name: Remove root privilege
-        run: sudo chown -R /home/runner/work/Scan-Report/Scan-Report
       - name: Scan network
-        run: bash scan.sh >> $GITHUB_STEP_SUMMARY
+        run: sudo bash scan.sh >> $GITHUB_STEP_SUMMARY
