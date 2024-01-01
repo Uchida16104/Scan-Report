@@ -16,6 +16,8 @@ jobs:
         run: sudo apt install nmap -y
       - name: Confirm Nmap version
         run: nmap --version
+      - name: Remove root privilege
+        run: pwd
       - name: Switch root user
         run: su
       - name: Scan network
