@@ -1,1 +1,1 @@
-nmap -A -O -PR -R -sS -sU -sV -T5 192.168.0.0/17
+nmap -A -O -PR -R -sS -sU -sV -T5 192.168.0.0/16 -oX scan.xml
