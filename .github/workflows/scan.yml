@@ -26,6 +26,10 @@ jobs:
         run: sudo apt-get install xsltproc
       - name: Scan network
         run: sudo bash scan.sh >> $GITHUB_STEP_SUMMARY
+      - name: Register user email
+        run: git config --global user.email "uho02741358@gmail.com"
+      - name: Register user name
+        run: git config --global user.name "Uchida16104"
       - name: Initialize Git
         run: git init
       - name: Register files
