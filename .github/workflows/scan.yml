@@ -37,4 +37,4 @@ jobs:
       - name: Commit files
         run: git commit -m "Committed"
       - name: Push files
-        run: git push origin master
+        run: git push origin main
