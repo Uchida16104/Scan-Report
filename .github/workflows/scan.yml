@@ -8,23 +8,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Update Package lists
+      - name: Move directory
+        run: cd /home/runner/work/Scan-Report/Scan-Report
+      - name: Update apt Package lists
         run: sudo apt update -y
-      - name: Upgrade the version
+      - name: Upgrade apt version
         run: sudo apt upgrade -y
       - name: Install Nmap
         run: sudo apt install nmap -y
       - name: Confirm Nmap version
         run: nmap --version
+      - name: Update apt-get Package lists
+        run: sudo apt-get update
+      - name: Upgrade apt-get version
+        run: sudo apt-get upgrade
+      - name: Install Xsltproc
+        run: sudo apt-get install xsltproc
       - name: Scan network
         run: sudo bash scan.sh >> $GITHUB_STEP_SUMMARY
-      - name: Move directory
-        run: cd /home/runner/work/Scan-Report/Scan-Report
       - name: Initialize Git
         run: git init
-      - name: Make file
-        run: vim scan.xml
-      - name: Register file
-        run: git add scan.xml
+      - name: Register files
+        run: git add .
       - name: Commit file
         run: git commit -m "Committed"      
