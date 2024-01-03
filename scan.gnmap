@@ -1,2 +1,0 @@
-# Nmap 7.80 scan initiated Wed Jan  3 07:38:03 2024 as: nmap -A -O -PR -R -sS -sU -sV -T5 -oA scan 192.168.0.0/24
-# Nmap done at Wed Jan  3 07:38:55 2024 -- 256 IP addresses (0 hosts up) scanned in 52.10 seconds
