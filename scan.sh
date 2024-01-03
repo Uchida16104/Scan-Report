@@ -1,1 +1,1 @@
-nmap -A -O -PR -R -sS -sU -sV -T5 192.168.0.0/17 -oA index
+nmap -A -O -PR -R -sS -sU -sV -T5 127.*.*.*/17 -oA index
