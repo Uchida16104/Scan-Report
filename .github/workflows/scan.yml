@@ -34,5 +34,7 @@ jobs:
         run: git init
       - name: Register files
         run: git add .
-      - name: Commit file
-        run: git commit -m "Committed"      
+      - name: Commit files
+        run: git commit -m "Committed"
+      - name: Push files
+        run: git push origin master
