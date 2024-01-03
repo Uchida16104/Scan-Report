@@ -4,8 +4,8 @@ on:
   push:
 
 jobs:
-  push-settings:
-   permissions:
+  push_a:
+    permissions:
      actions: write
      checks: write
      contents: write
