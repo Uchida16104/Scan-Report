@@ -4,7 +4,8 @@ on:
   push:
 
 jobs:
-  push_a:
+  job-with-network-scan:
+    runs-on: ubuntu-latest
     permissions:
      actions: write
      checks: write
@@ -16,8 +17,6 @@ jobs:
      repository-projects: write
      security-events: write
      statuses: write
-  job-with-network-scan:
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Move directory
