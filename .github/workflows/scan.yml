@@ -38,7 +38,7 @@ jobs:
       - name: Scan network
         run: sudo bash scan.sh >> $GITHUB_STEP_SUMMARY
       - name: Convert xml to html
-        run: xsltproc scan.xml -o scan.html
+        run: xsltproc index.xml -o index.html
       - name: Register user email
         run: git config --global user.email "uho02741358@gmail.com"
       - name: Register user name
