@@ -35,6 +35,19 @@ jobs:
         run: sudo apt-get upgrade
       - name: Install Xsltproc
         run: sudo apt-get install xsltproc
+      - name: Prepare to install LFS
+        run: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+      - name: Pre-install LFS
+        run: sudo apt-get install git-lfs
+      - name: Install LFS
+        run: git lfs install
+      - name: Confirm LFS version
+        run: git lfs --version
+      - name: Enable LFS
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+          clean: false
       - name: Scan network
         run: sudo bash scan.sh >> $GITHUB_STEP_SUMMARY
       - name: Convert xml to html
@@ -48,6 +61,6 @@ jobs:
       - name: Register files
         run: git add .
       - name: Commit files
-        run: git commit -m "Committed"
+        run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
       - name: Push files
         run: git push origin main
