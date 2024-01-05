@@ -48,6 +48,8 @@ jobs:
         with:
           lfs: true
           clean: false
+      - name: Reset commits
+        run: git reset --soft HEAD^
       - name: Scan network
         run: sudo bash scan.sh >> $GITHUB_STEP_SUMMARY
       - name: Convert xml to html
