@@ -68,5 +68,6 @@ jobs:
         run: git add .
       - name: Commit files
         run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
+      - uses: stefanzweifel/git-auto-commit-action@v4
       - name: Push files
         run: git push origin main
