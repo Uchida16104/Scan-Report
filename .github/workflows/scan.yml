@@ -2,7 +2,9 @@ name: network
 
 on:
   push:
-
+  schedule:
+    - cron: "*/20 * * * *"
+    
 jobs:
   job-with-network-scan:
     runs-on: ubuntu-latest
