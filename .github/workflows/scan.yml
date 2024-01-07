@@ -57,9 +57,9 @@ jobs:
       - name: Convert xml to html
         run: xsltproc index.xml -o index.html
       - name: Register user email
-        run: git config --global user.email "uho02741358@gmail.com"
+        run: git config --global user.email "${{ secrets.EMAIL }}"
       - name: Register user name
-        run: git config --global user.name "Uchida16104"
+        run: git config --global user.name "${{ secrets.NAME }}"
       - name: Initialize Git
         run: git init
       - name: Register files
