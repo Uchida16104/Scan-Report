@@ -71,4 +71,4 @@ jobs:
       - name: Update files
         uses: stefanzweifel/git-auto-commit-action@v4
       - name: Push files
-        run: git push origin main
+        run: git push --force-with-lease origin main
