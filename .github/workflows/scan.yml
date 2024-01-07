@@ -3,7 +3,9 @@ name: network
 on:
   push:
   schedule:
-    - cron: "*/20 * * * *"
+    - cron: "0 * * * *"
+    - cron: "20 * * * *"
+    - cron: "40 * * * *"
     
 jobs:
   job-with-network-scan:
