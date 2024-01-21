@@ -1,36 +1,44 @@
 name: Deploy to GitHub Pages with Basic Auth
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
       - name: Download Node.js
         run: wget https://nodejs.org/dist/v20.11.0/node-v20.11.0-linux-x64.tar.xz
-
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.11'
-
       - name: Install Dependencies
         run: sudo apt install -y nodejs npm
-
       - name: Prepare to use Node.js
         run: npm init --yes && npm install bitcore-lib-cash && echo "node_modules/*" > .gitignore && npm install
-
-      - name: Deploy to GitHub Pages
-        run: |
-          echo ${{ secrets.BASIC_AUTH }} > .htpasswd
-          git deploy
+      - name: Write to .htpasswd
+        run: echo ${{ secrets.BASIC_AUTH }} > .htpasswd
+      - name: Register user email
+        run: git config --global user.email "uho02741358@gmail.com"
+      - name: Register user name
+        run: git config --global user.name "Uchida16104"
+      - name: Initialize Git
+        run: git init
+      - name: Register files
+        run: git add .
+      - name: Commit files
+        run: git commit -m "Upload Zend framework 3 skeleton" -m "Use GitHub web GUI"
+      - name: Fetch files
+        run: git fetch
+      - name: Merge files
+        run: git merge
+      - name: Update files
+        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Push files
+        run: git push --force-with-lease origin main
         env:
           NODE_ENV: production
           BASIC_AUTH: ${{ secrets.BASIC_AUTH }}
