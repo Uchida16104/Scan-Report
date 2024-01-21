@@ -1,0 +1,15 @@
+{
+  "name": "scan-report",
+  "version": "1.0.0",
+  "description": "This is an automation tool is scanned network mainly.",
+  "main": "auth.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bitcore-lib-cash": "^10.0.23"
+  }
+}
