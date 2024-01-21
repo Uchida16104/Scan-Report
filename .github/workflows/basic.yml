@@ -30,7 +30,7 @@ jobs:
       - name: Deploy to GitHub Pages
         run: |
           echo ${{ secrets.BASIC_AUTH }} > .htpasswd
-          npm run deploy
+          git deploy
         env:
           NODE_ENV: production
           BASIC_AUTH: ${{ secrets.BASIC_AUTH }}
