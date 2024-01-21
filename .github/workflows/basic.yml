@@ -28,5 +28,4 @@ jobs:
           npm run deploy
         env:
           NODE_ENV: production
-        secrets:
           BASIC_AUTH: ${{ secrets.BASIC_AUTH }}
