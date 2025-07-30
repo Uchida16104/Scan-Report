@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bitcore-lib-cash": "^10.0.39"
+    "bitcore-lib-cash": "^10.5.3"
   }
 }
